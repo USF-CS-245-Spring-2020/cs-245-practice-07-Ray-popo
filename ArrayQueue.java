@@ -5,8 +5,12 @@ public class ArrayQueue<T> implements Queue<T>
     public int tail = -1;
 
     @Override
-    public T dequeue()
+    public T dequeue() throws Exception
     {
+        if(empty())
+        {
+            throw new Exception();
+        }
         head++;
         T t = arr[head];
         arr[head] = null;

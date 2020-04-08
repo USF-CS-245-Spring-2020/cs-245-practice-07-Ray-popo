@@ -16,11 +16,11 @@ public class ArrayStack<T> implements Stack<T>
     }
 
     @Override
-    public T pop()
+    public T pop() throws Exception
     {
-        if (empty())
+        if(empty())
         {
-            return null;
+            throw new Exception();
         }
         T t = arr[top];
         top--;
@@ -29,11 +29,11 @@ public class ArrayStack<T> implements Stack<T>
     }
 
     @Override
-    public T peek()
+    public T peek() throws Exception
     {
-        if (empty())
+        if(empty())
         {
-            return null;
+            throw new Exception();
         }
         return arr[top];
     }
